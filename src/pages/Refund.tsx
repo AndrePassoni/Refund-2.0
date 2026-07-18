@@ -23,7 +23,7 @@ export function Refund() {
     }
 
     return (
-        <form onSubmit={onSubmit} className="mx-auto mt-16 flex w-full max-w-[464px] flex-col gap-6 rounded-[20px] bg-gray-500 p-10 shadow-[0_8px_32px_rgba(31,37,35,0.06)]">
+        <form onSubmit={onSubmit} className="mx-auto mt-16 flex w-full max-w-116 flex-col gap-6 rounded-[20px] bg-gray-500 p-10 shadow-[0_8px_32px_rgba(31,37,35,0.06)]">
             <header className="space-y-2">
                 <h1 className="text-2xl font-bold text-gray-100">
                     Solicitação de reembolso

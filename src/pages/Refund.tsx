@@ -2,6 +2,7 @@ import { CATEGORIES, CATEGORIES_KEYS } from "../utils/Categories";
 import { Input } from "../components/Input";
 import { Select } from "../components/Select";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import { Upload } from "../components/Upload";
 import { Button } from "../components/Button";
 
@@ -12,10 +13,13 @@ export function Refund() {
     const [isLoading, setIsLoading] = useState(false)
     const [filename, setFilename] = useState<File | null>(null)
 
+    const navigate = useNavigate()
+
     function onSubmit(e: React.FormEvent) {
         e.preventDefault()
 
         console.log(name, amount, category, filename)
+        navigate("/confirm", { state: { fromSubmit: true } })
     }
 
     return (

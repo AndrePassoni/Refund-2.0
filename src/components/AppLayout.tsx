@@ -3,8 +3,8 @@ import { Header } from "./Header";
 
 export function AppLayout() {
     return (
-        <div className="w-screen h-screen bg-gray-400 flex flex-col items-center text-gray-100">
-            <main className="p-3 w-full md:w-auto">
+        <div className="min-h-screen bg-gray-400 text-gray-100">
+            <main className="mx-auto flex w-full max-w-[1180px] flex-col px-8 pt-8 pb-10">
                 <Header />
                 <Outlet />
             </main>

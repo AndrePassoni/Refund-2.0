@@ -1,4 +1,4 @@
-import { CATEGORIES, CATEGORIES_KEYS } from "../utils/Categories";
+import { CATEGORIES, CATEGORIES_KEYS } from "../utils/categories";
 import { Input } from "../components/Input";
 import { Select } from "../components/Select";
 import { useState } from "react";
@@ -23,15 +23,17 @@ export function Refund() {
     }
 
     return (
-        <form onSubmit={onSubmit} className="bg-gray-500 w-full rounded-xl flex flex-col p-10 gap-6 lg:min-w-lg">
-            <header>
-                <h1 className="text-xl font-bold text-gray-100">
+        <form onSubmit={onSubmit} className="mx-auto mt-16 flex w-full max-w-[464px] flex-col gap-6 rounded-[20px] bg-gray-500 p-10 shadow-[0_8px_32px_rgba(31,37,35,0.06)]">
+            <header className="space-y-2">
+                <h1 className="text-2xl font-bold text-gray-100">
                     Solicitação de reembolso
                 </h1>
-                <p className="text-sm text-gray-200 mt-2 mb-4">
+                <p className="text-sm text-gray-200">
                     Dados da despesa para solicitar reembolso.
                 </p>
+            </header>
 
+            <div className="space-y-6">
                 <Input required legend="Nome da solicitação" value={name} onChange={(e) => setName(e.target.value)} />
 
                 <div className="flex gap-4">
@@ -50,7 +52,7 @@ export function Refund() {
                 <Upload filename={filename && filename.name} onChange={(e) => e.target.files && setFilename(e.target.files[0])} />
 
                 <Button type="submit" isLoading={isLoading}>Enviar</Button>
-            </header>
+            </div>
         </form>
     )
 }
